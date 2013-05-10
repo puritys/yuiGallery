@@ -1,0 +1,15 @@
+{
+    "name": "gallery-file-uploader",
+    "builds": {
+        "gallery-file-uploader": {
+            "config": {
+                "requires": [
+                    "uploader"
+                ]
+            },
+            "jsfiles": [
+                "yFileLoader.js"
+            ]
+        }
+    }
+}

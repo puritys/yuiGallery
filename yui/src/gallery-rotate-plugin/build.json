@@ -1,0 +1,27 @@
+{
+    "name": "gallery-rotate-plugin",
+    "builds": {
+        "gallery-transform": {
+            "config": {
+                "requires": [
+                    "node"
+                ]
+            },
+            "jsfiles": [
+                "transform.js"
+            ]
+        },
+        "gallery-rotate-plugin": {
+            "config": {
+                "requires": [
+                    "gallery-transform",
+                    "plugin",
+                    "node"
+                ]
+            },
+            "jsfiles": [
+                "rotatePlugin.js"
+            ]
+        }
+    }
+}

@@ -1,0 +1,38 @@
+
+<div id="uploaderDemo" style="width:300px;margin:0 auto;">
+   <div id="btn"><input type="file" /></div>
+   <div id="progressBar" ></div>
+</div>
+
+<script src="http://yui.yahooapis.com/3.7.3/build/yui/yui-min.js"></script>
+<script src="../../../build/gallery-file-uploader/gallery-file-uploader.js"></script>
+<script>
+YUI().use("node","gallery-file-uploader" , function(Y){
+    function test(a, b, c) {
+Y.log(a);
+Y.log(a.data);
+    }
+        if (Y.Uploader.TYPE != "none" && !Y.UA.ios) {
+            var url = "test.php";//server url
+            fileUploader = new Y.yFileUploader({
+                    multipleFiles: true,
+                    width: "275px",
+                    height: "35px",
+                    progressBarWidth: 270,
+                    progressBarHeight: 25,
+                    progressBarContainer: "#uploaderDemo #progressBar",
+                    swfURL: "http://yui.yahooapis.com/3.7.3/build/uploader/assets/flashuploader.swf?t=" + Math.random(),
+                    uploadURL: url,
+                    simLimit: 1,
+                    withCredentials: false,
+                    selectButtonLabel:"上傳檔案",
+                    container:"#uploaderDemo #btn",
+                    fileFieldName: "data"
+              });
+         fileUploader.after("uploadcomplete", test);
+         //fileUploader.set("multipleFiles", true);
+         fileUploader.render("#uploaderDemo #btn");
+       }
+     
+});
+</script>
